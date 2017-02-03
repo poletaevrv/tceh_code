@@ -1,4 +1,4 @@
-#1
+#1 Написать функцию, которая выбрасывает одно из трех исключений: ValueError, TypeError или RuntimeError случайным образом. В месте вызова функции обрабатывать все три исключения
 import random
 s = [ValueError, TypeError, RuntimeError]
 
