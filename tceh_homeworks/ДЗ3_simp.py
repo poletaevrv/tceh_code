@@ -1,4 +1,4 @@
-#1 Написать функцию, которая выбрасывает одно из трех исключений: ValueError, TypeError или RuntimeError случайным образом. В месте вызова функции обрабатывать все три исключения
+#1
 import random
 s = [ValueError, TypeError, RuntimeError]
 
@@ -97,3 +97,26 @@ def do_work(my_list, success_callback, error_callback):
     	 
 #do_work((1,2,3,4,5,6), handle_success, handle_error) 
 do_work([13,21,3,40,600,50], handle_success, handle_error) 
+
+#5" После консультации с преподавателем)))
+
+def handle_success(): 
+    print('Проверка прошла успешно') 
+ 
+def handle_error(): 
+    raise ValueError('ValueError - Ошибка в значениях, список должен быть задан по возрастанию') 
+        
+def do_work(my_list, success_callback, error_callback): 
+    d_w = my_list[0]
+    for i in my_list:
+        if d_w < i + 1:
+            d_w = i #+ 1
+        else:
+            error_callback()
+    success_callback()
+    
+        
+    
+	 
+do_work((1,2,3,4,5,6), handle_success, handle_error) 
+#do_work([13,21,3,40,600,50], handle_success, handle_error) 
